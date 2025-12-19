@@ -1,0 +1,636 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.nav-container {
+    background-image: url("https://images.pexels.com/photos/2349957/pexels-photo-2349957.jpeg?cs=srgb&dl=pexels-darrylin-2349957.jpg&fm=jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 10px;
+    width: 100%;
+    color: black;
+    background-color: white;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0px 5px 10px 0px black;
+    z-index: 1;
+}
+
+.div-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.div-section i {
+    display: none;
+}
+
+#search-open {
+    display: block;
+}
+
+.nav-container h1 {
+    cursor: pointer;
+}
+
+.nav-container a {
+    font-size: large;
+    color: black;
+    text-decoration: none;
+}
+
+.nav-container a:hover {
+    background-color: orange;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px 0px black;
+}
+
+.nav-container p {
+    font-size: 20px;
+}
+
+.para-container {
+    padding: 25px;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.subpara-container {
+    width: 50%;
+}
+
+.subpara-container h2 {
+    color: white;
+    font-size: 40px;
+}
+
+.subpara-container h1 {
+    color: lightgreen;
+    font-size: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.subpara-container p {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.subpara-container button {
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: large;
+    background-color: transparent;
+    border-radius: 25px;
+    border: black 2px solid;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.subpara-container button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Search Overlay */
+#search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease;
+    z-index: 3;
+}
+
+#search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-box {
+    background: white;
+    padding: 10px;
+    width: 40%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+}
+
+.search-box i {
+    font-size: 22px;
+    color: blue;
+    cursor: pointer;
+}
+
+#search-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+}
+
+#side {
+    background-color: black;
+    position: fixed;
+    top: -200px;
+    left: 0px;
+    width: 100%;
+    padding: 20px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+    transition: top 1s ease-in-out;
+    box-shadow: 0px 5px 5px 0px white;
+    z-index: 2;
+}
+
+.bar-section {
+    width: 80%;
+}
+
+#side i {
+    color: red;
+}
+
+.bar-section a {
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.add-container {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: white;
+}
+
+.add-container h1 {
+    text-align: center;
+}
+
+.subadd-container {
+    text-align: center;
+    margin-top: 25px;
+    width: 30%;
+}
+
+.subadd-container img {
+    width: 200px;
+    border-radius: 100%;
+    box-shadow: 0px 10px 10px 0px darkgrey;
+    margin-bottom: 10px;
+}
+
+.subadd-container h3 {
+    color: rebeccapurple;
+    font-size: 25px;
+}
+
+.subadd-container p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.subadd-container a {
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 25px;
+    transition: 0.5s;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+}
+
+.subadd-container a:hover {
+    background-color: black;
+    color: white;
+}
+
+.addvan-container {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.package-container {
+    background-color: lightgray;
+    padding: 20px;
+}
+
+.package-container h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.subpackage {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.subpackage-container {
+    width: 30%;
+    border: 2px solid black;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 5px 0px black;
+}
+
+.subpackage-container:hover {
+    background-color: black;
+    color: white;
+}
+
+.subpackage-container img {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.subpackage-container h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.subpackage-container p {
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+.subpackage-container h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: green;
+    font-size: 20px;
+}
+
+.subpackage-container button {
+    border: 2px solid black;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 16px;
+    border-radius: 20px;
+    background-color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.subpackage-container button:hover {
+    background-color: black;
+    color: white;
+    border: 2px white solid;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+}
+
+.contact-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    box-shadow: 0px 0px 10px 0px black;
+    border-radius: 10px;
+}
+
+.contact-container h1 {
+    color: green;
+    font-size: 40px;
+}
+
+.form-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.subform-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.subform-container input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.subform-container textarea {
+    width: 100%;
+    height: 67%;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    font-size: 16px;
+    resize: both;
+}
+
+.subform-container button {
+    margin-top: 5px;
+    font-size: 20px;
+    padding: 10px;
+    width: 50%;
+    border: 2px solid green;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.subcontact-container {
+    background-image: url("https://wallpapercave.com/wp/wp9781354.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding: 25px;
+}
+
+.submini-container {
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mini-subcontainer ul {
+    list-style: none;
+}
+
+.mini-subcontainer li {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 18px;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.mini-subcontainer li:hover {
+    color: green;
+}
+
+.mini-subcontainer h2 {
+    text-align: start !important;
+}
+
+.subcontact-container h2 {
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+.subcontact-container span {
+    color: green;
+}
+
+.subcontact-container a {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: block;
+}
+
+.mini-subcontainer a:hover {
+    color: green;
+}
+
+.reveal {
+    opacity: 0;
+    transition: all 2s ease-in-out;
+    transform: translateY(-60px);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translate(0);
+}
+
+.from-bottom {
+    transform: translateY(60px);
+}
+
+@media screen and (max-width:1000px) {
+    .subpackage-container {
+        width: 45%;
+    }
+
+    .div-section {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .subadd-container {
+        width: 45%;
+    }
+
+    .subpara-container h2 {
+        font-size: 20px;
+    }
+
+    .subpara-container h1 {
+        font-size: 25px;
+    }
+
+    .subpara-container p {
+        font-size: 16px;
+    }
+
+    .div-section {
+        gap: 10px;
+    }
+
+    .form-container {
+        display: block;
+    }
+
+    .subform-container {
+        margin-top: 0px;
+    }
+
+    .mini-subcontainer h2 {
+        font-size: 20px;
+    }
+
+    .mini-subcontainer li {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .mini-subcontainer a {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .mini-subcontainer {
+        width: 45%;
+    }
+
+    .subcontact-container h2 {
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .div-section i {
+        display: block;
+    }
+
+    .subadd-container {
+        width: 90%;
+    }
+
+    .div-section a {
+        display: none;
+    }
+
+    .subpackage-container {
+        width: 90%;
+    }
+
+    .add-container h1 {
+        font-size: 25px;
+    }
+
+    .subadd-container h3 {
+        font-size: 20px;
+    }
+
+    .package-container h1 {
+        font-size: 25px;
+    }
+
+    .package-container h2 {
+        font-size: 20px;
+    }
+
+    .package-container p {
+        font-size: 16px;
+    }
+
+    .subpara-container {
+        width: 75%;
+    }
+
+    .contact-container {
+        width: 90%;
+    }
+
+    .mini-subcontainer li {
+        font-size: 14px;
+    }
+
+    .subcontact-container a {
+        font-size: 14px;
+    }
+
+    .mini-subcontainer {
+        width: 100%;
+    }
+
+    .subcontact-container h2 {
+        margin-top: 0px;
+    }
+
+    .submini-container {
+        gap: 10px;
+    }
+
+    .subcontact-container h2 {
+        margin-top: 25px;
+    }
+
+    .section h1 {
+        font-size: 25px;
+    }
+
+    #side {
+        display: flex;
+    }
+
+    .mini-subcontainer h2 {
+        margin-top: 0px;
+    }
+
+    .bar-section a {
+        margin-left: 0px;
+    }
+
+    .search-box {
+        width: 70%;
+    }
+}
